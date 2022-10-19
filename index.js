@@ -21,8 +21,8 @@ const attBtn = document.querySelector("#att-btn");
 btn.addEventListener("click", getPosition);
 attBtn.addEventListener("click", markAttendance);
 window.onload = getUserPosition;
-const defaultLatitude = 9.0547;
-const defaultLongitude = 7.485;
+const defaultLatitude = 9.054701;
+const defaultLongitude = 7.485451;
 
 let userPosition;
 let positionDetail;
@@ -48,13 +48,14 @@ function chek(position) {
 
 function markAttendance() {
   if (
-    userPosition.latitude <= 7.4849 &&
-    userPosition.longitude >= 7.4851 &&
-    userPosition.longitude <= 9.0546 &&
-    userPosition.longitude >= 9.0548
+    userPosition.latitude <= 9.0547 &&
+    userPosition.longitude >= 7.485452 &&
+    userPosition.latitude <= 9.054669 &&
+    userPosition.longitude >= 7.48545
   ) {
-    window.location.replace("wrongloc.html");
-  } else {
     window.location.replace("takeatt.html");
+  } else {
+    // window.location.replace("takeatt.html");
+    window.location.replace("wrongloc.html");
   }
 }
