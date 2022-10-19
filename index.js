@@ -44,7 +44,7 @@ function chek (position) {
 }
 
 function markAttendance () {
-    if (defaultLatitude != userPosition.latitude && defaultLongitude != userPosition.longitude) {
+    if ((userPosition.latitude <= 7.48600) && (userPosition.longitude >= 7.48400) && (userPosition.longitude <= 9.05600) && (userPosition.longitude >= 9.05300) ) {
         window.location.replace('wrongloc.html');
     } else {
         window.location.replace('takeatt.html')
