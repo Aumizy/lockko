@@ -18,8 +18,8 @@ const attBtn = document.querySelector('#att-btn')
 btn.addEventListener('click', getPosition);
 attBtn.addEventListener('click', markAttendance);
 window.onload = getUserPosition;
-const defaultLatitude = 9.0578695;
-const defaultLongitude = 7.4922513;
+const defaultLatitude = 9.05535;
+const defaultLongitude = 7.48496;
 
 let userPosition;
 let positionDetail;
