@@ -21,11 +21,13 @@ const attBtn = document.querySelector("#att-btn");
 btn.addEventListener("click", getPosition);
 attBtn.addEventListener("click", markAttendance);
 window.onload = getUserPosition;
-const defaultLatitude = 9.054701;
-const defaultLongitude = 7.485451;
+// const defaultLatitude = 9.054701;
+// const defaultLongitude = 7.485451;
 
 let userPosition;
 let positionDetail;
+let mainLat;
+let mainLong;
 
 function getUserPosition() {
   if (navigator.geolocation) {
@@ -40,18 +42,22 @@ function chek(position) {
     longitude: position.coords.longitude,
   };
   // h1.innerHTML = "latitude: " + userPosition.latitude + "longitude: " + userPosition.longitude;
+  
+  mainLat = userPosition.latitude.toFixed(6);
+  mainLong = userPosition.longitude.toFixed(6);
+  Number(mainLat)
+  Number(mainLong)
+  
   console.log(userPosition);
-  console.log(positionDetail);
+  console.log(mainLat, mainLong);
   return userPosition;
   // userPosition = getPosition();
 }
 
 function markAttendance() {
   if (
-    userPosition.latitude <= 9.0547 &&
-    userPosition.longitude >= 7.485452 &&
-    userPosition.latitude <= 9.054669 &&
-    userPosition.longitude >= 7.48545
+    (mainLat >= 9.053486 && mainLat <= 9.055653) &&
+    (mainLong >= 7.485196 && mainLong <= 7.486951)
   ) {
     window.location.replace("takeatt.html");
   } else {
