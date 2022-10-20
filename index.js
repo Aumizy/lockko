@@ -42,11 +42,12 @@ function chek(position) {
     longitude: position.coords.longitude,
   };
   // h1.innerHTML = "latitude: " + userPosition.latitude + "longitude: " + userPosition.longitude;
-  
-  mainLat = userPosition.latitude.toFixed(6);
-  mainLong = userPosition.longitude.toFixed(6);
-  Number(mainLat)
-  Number(mainLong)
+  let convLatHolder;
+  let convLongHolder;
+  convLatHolder = userPosition.latitude.toFixed(6);
+  convLongHolder = userPosition.longitude.toFixed(6);
+  mainLat = Number(convLatHolder);
+  mainLong = Number(convLongHolder);
   
   console.log(userPosition);
   console.log(mainLat, mainLong);
