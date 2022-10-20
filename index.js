@@ -3,10 +3,10 @@ function getPosition() {
     navigator.geolocation.getCurrentPosition((position) => {
       h1.innerHTML =
         "Location: Longitude " +
-        position.coords.longitude +
+        position.coords.longitude.toFixed(6) +
         "\n" +
         "Latitude: " +
-        position.coords.latitude;
+        position.coords.latitude.toFixed(6);
       console.log(position);
     });
   } else {
@@ -20,7 +20,7 @@ const html = document.querySelector("html");
 const attBtn = document.querySelector("#att-btn");
 btn.addEventListener("click", getPosition);
 attBtn.addEventListener("click", markAttendance);
-window.onload = getUserPosition;
+//window.onload = getUserPosition;
 // const defaultLatitude = 9.054701;
 // const defaultLongitude = 7.485451;
 
@@ -56,6 +56,7 @@ function chek(position) {
 }
 
 function markAttendance() {
+  getUserPosition();
   if (
     (mainLat >= 9.053200 && mainLat <= 9.055800) &&
     (mainLong >= 7.484100 && mainLong <= 7.487200)
