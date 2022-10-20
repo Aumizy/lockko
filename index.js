@@ -57,8 +57,8 @@ function chek(position) {
 
 function markAttendance() {
   if (
-    (mainLat >= 9.053486 && mainLat <= 9.055653) &&
-    (mainLong >= 7.485196 && mainLong <= 7.486951)
+    (mainLat >= 9.053200 && mainLat <= 9.055800) &&
+    (mainLong >= 7.484100 && mainLong <= 7.487200)
   ) {
     window.location.replace("takeatt.html");
   } else {
